@@ -63,8 +63,8 @@ class Record:
                 p.value = new_phone
                 print(f"Phone number '{old_phone}' edited successfully to '{new_phone}'.")
                 break
-        else:
-            print(f"No phone number '{old_phone}' found.")
+            else:
+                print(f"No phone number '{old_phone}' found.")
 
     #Пошук телефону
     def find_phone(self, phone):

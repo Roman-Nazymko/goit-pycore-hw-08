@@ -1,4 +1,5 @@
 from classes import AddressBook, Record
+from storage import load_data, save_data
 
 #Декоратор для обробки помилок
 def input_error(func):
@@ -87,13 +88,14 @@ def parse_input(user_input):
     return cmd, *args
 
 def main():
-    book = AddressBook()
+    book = load_data()
     print("Welcome to the assistant bot!")
     while True:
         user_input = input("Enter a command: ")
         command, *args = parse_input(user_input)
 
         if command in ["close", "exit"]:
+            save_data(book)
             print("Good bye!")
             break
 
